@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fff3fb;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-card {
+  margin: 80px auto;
+  width: 380px;
+  padding: 30px 40px;
+  background: white;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: fadeIn 0.9s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cat-wrapper {
+  position: relative;
+}
+
+.cat-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  animation: pop 0.45s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.hearts {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  font-size: 32px;
+  opacity: 0;
+  animation: heartFloat 1.4s ease-out forwards;
+}
+
+.hearts span:nth-child(1) { left: -40px; animation-delay: 0.1s; }
+.hearts span:nth-child(2) { left: 0px; animation-delay: 0.2s; }
+.hearts span:nth-child(3) { left: 40px; animation-delay: 0.3s; }
+.hearts span:nth-child(4) { left: -20px; animation-delay: 0.4s; }
+.hearts span:nth-child(5) { left: 20px; animation-delay: 0.5s; }
+
+@keyframes heartFloat {
+  0% { transform: translateY(20px) scale(0.6); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-60px) scale(1.3); opacity: 0; }
+}
+
+.btn-change {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ff8bcf, #ff5ea8);
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 8px 16px rgba(255, 90, 150, 0.3);
+}
+
+.btn-change:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px rgba(255, 90, 150, 0.4);
+}
+
+.btn-change:active {
+  transform: scale(0.95);
+}
